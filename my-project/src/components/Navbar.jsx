@@ -37,8 +37,27 @@ const Navbar = () => {
                     {mobileDrawerOpen ? <X /> : <Menu />}
                 </button>
             </div>
-            
         </div>
+        {mobileDrawerOpen && (
+          <div className=".fixed.right-0. z-20.bg-neutral-900.w-full.p-12.flex.flex-col.justify.items-center.lg:hidden">
+            <ul>
+              {navItems.map((item, index) => (
+              <li key={index} className="py-4">
+                <a href="{item.href}">{item.label}</a>
+              </li>
+
+              ))}
+            </ul>
+            <div className="flex.space-x-6" >
+              <a href="#" class="py-2 px-3 border rounded-md">
+                Sign In
+              </a>
+              <a href="#"className="py-2 px-3 rounded-md gradient-to-r from-orange-500 to-orange-800">
+                Create an account
+              </a>
+            </div>
+          </div>
+        )}
     </div>
   </nav>
     
